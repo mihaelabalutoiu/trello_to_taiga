@@ -1,0 +1,189 @@
+{
+    "watchers": ["info@cloudbasesolutions.com"],
+    "name": "Import",
+    "slug": "import",
+    "description": "Import",
+    "created_date": "2024-04-04T19:43:05+0000",
+    "logo": null,
+    "total_milestones": null,
+    "total_story_points": null,
+    "is_epics_activated": false,
+    "is_backlog_activated": false,
+    "is_kanban_activated": true,
+    "is_wiki_activated": false,
+    "is_issues_activated": false,
+    "videoconferences": null,
+    "videoconferences_extra_data": null,
+    "creation_template": "kanban",
+    "is_private": true,
+    "is_featured": false,
+    "is_looking_for_people": false,
+    "looking_for_people_note": "",
+    "epics_csv_uuid": null,
+    "userstories_csv_uuid": null,
+    "tasks_csv_uuid": null,
+    "issues_csv_uuid": null,
+    "transfer_token": null,
+    "blocked_code": null,
+    "totals_updated_datetime": "2024-04-04T19:43:05+0000",
+    "total_fans": 0,
+    "total_fans_last_week": 0,
+    "total_fans_last_month": 0,
+    "total_fans_last_year": 0,
+    "total_activity": 1,
+    "total_activity_last_week": 1,
+    "total_activity_last_month": 1,
+    "total_activity_last_year": 1,
+    "anon_permissions": [],
+    "public_permissions": [],
+    "modified_date": "2024-04-04T20:06:28+0000",
+    "roles": [
+      {
+        "name": "Product Owner",
+        "slug": "product-owner",
+        "order": 50,
+        "computable": false,
+        "permissions": [
+          "add_issue",
+          "modify_issue",
+          "delete_issue",
+          "view_issues",
+          "add_milestone",
+          "modify_milestone",
+          "delete_milestone",
+          "view_milestones",
+          "view_project",
+          "add_task",
+          "modify_task",
+          "delete_task",
+          "view_tasks",
+          "add_us",
+          "modify_us",
+          "delete_us",
+          "view_us",
+          "add_wiki_page",
+          "modify_wiki_page",
+          "delete_wiki_page",
+          "view_wiki_pages",
+          "add_wiki_link",
+          "delete_wiki_link",
+          "view_wiki_links",
+          "view_epics",
+          "add_epic",
+          "modify_epic",
+          "delete_epic",
+          "comment_epic",
+          "comment_us",
+          "comment_task",
+          "comment_issue",
+          "comment_wiki_page"
+        ]
+      }
+    ],
+    "owner": "info@cloudbasesolutions.com",
+    "memberships": [
+      {
+        "user": "info@cloudbasesolutions.com",
+        "role": "Product Owner",
+        "invited_by": null,
+        "is_admin": true,
+        "email": "info@cloudbasesolutions.com",
+        "created_at": "2024-04-04T19:43:05+0000",
+        "invitation_extra_text": null,
+        "user_order": 1
+      }
+    ],
+    "points": [{ "name": "40", "order": 12, "value": 40.0 }],
+    "epic_statuses": [
+      {
+        "name": "Done",
+        "slug": "done",
+        "order": 5,
+        "is_closed": true,
+        "color": "#A8E440"
+      }
+    ],
+    "us_statuses": [
+      {
+        "name": "Archived",
+        "slug": "archived",
+        "order": 6,
+        "is_closed": true,
+        "is_archived": true,
+        "color": "#A9AABC",
+        "wip_limit": null
+      }
+    ],
+    "us_duedates": [
+      {
+        "name": "Default",
+        "order": 1,
+        "by_default": true,
+        "color": "#9dce0a",
+        "days_to_due": null
+      }
+    ],
+    "task_statuses": [
+      {
+        "name": "Needs Info",
+        "slug": "needs-info",
+        "order": 5,
+        "is_closed": false,
+        "color": "#5178D3"
+      }
+    ],
+    "task_duedates": [
+      {
+        "name": "Default",
+        "order": 1,
+        "by_default": true,
+        "color": "#9dce0a",
+        "days_to_due": null
+      }
+    ],
+    "issue_types": [{ "name": "Enhancement", "order": 3, "color": "#40E4CE" }],
+    "issue_statuses": [
+      {
+        "name": "Postponed",
+        "slug": "postponed",
+        "order": 7,
+        "is_closed": false,
+        "color": "#5178D3"
+      }
+    ],
+    "issue_duedates": [
+      {
+        "name": "Default",
+        "order": 1,
+        "by_default": true,
+        "color": "#9dce0a",
+        "days_to_due": null
+      }
+    ],
+    "priorities": [{ "name": "High", "order": 5, "color": "#E44057" }],
+    "severities": [{ "name": "Critical", "order": 5, "color": "#E47C40" }],
+    "swimlanes": [],
+    "tags_colors": [],
+    "default_points": "40",
+    "default_epic_status": "Done",
+    "default_us_status": "Archived",
+    "default_task_status": "Needs Info",
+    "default_priority": "High",
+    "default_severity": "Critical",
+    "default_issue_status": "Postponed",
+    "default_issue_type": "Enhancement",
+    "default_swimlane": null,
+    "epiccustomattributes": [],
+    "userstorycustomattributes": [],
+    "taskcustomattributes": [],
+    "issuecustomattributes": [],
+    "epics": [],
+    "user_stories": [],
+    "tasks": [],
+    "milestones": [],
+    "issues": [],
+    "wiki_links": [],
+    "wiki_pages": [],
+    "tags": [],
+    "timeline": []
+  }
