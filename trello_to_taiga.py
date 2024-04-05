@@ -5,7 +5,6 @@ trello_export_path = 'trainings_trello.json'
 taiga_import_path = "import.json"
 
 default_email = "info@cloudbasesolutions.com"
-
 with open(template_path) as f:
     data = json.load(f)
 
@@ -14,6 +13,9 @@ with open(trello_export_path) as f:
 
 name = trello_data["name"]
 desc = trello_data["desc"]
+
+if trello_data["desc"] == "":
+    desc = "trainings-by-cloudbase-solutions"
 
 data["name"] = name
 data["slug"] = name.lower().replace(" ", "-")
@@ -45,7 +47,8 @@ for i, card in enumerate(trello_data["cards"], 1):
     list_id = card["idList"]
     last_activity = card["dateLastActivity"]
     closed = card["closed"]
-
+    if card["desc"] == "":
+        desc = None
     data["user_stories"].append({
       "watchers": [],
       "attachments": [],
@@ -81,6 +84,27 @@ for i, card in enumerate(trello_data["cards"], 1):
       "tags": [],
       "due_date": None,
       "due_date_reason": ""
+    })
+
+#
+# Create custom fields for user stories
+#
+for c, customField in enumerate(trello_data["customFields"], 1):
+    name = customField["name"]
+    type = customField["type"]
+    if customField["type"] == "list":
+        type = "dropdown"
+
+    # We need unique names
+    names = [i['name'] for i in data['userstorycustomattributes']]
+    if customField["name"] in names:
+        name = customField["name"] + str(c)
+
+    data['userstorycustomattributes'].append({
+        "name": name,
+        "description": name,
+        "type": type,
+        "order": c,
     })
 
 with open(taiga_import_path, "w") as f:
