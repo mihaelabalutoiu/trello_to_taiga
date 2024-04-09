@@ -12,11 +12,11 @@ with open(template_path) as f:
 with open(trello_export_path) as f:
     trello_data = json.load(f)
 
-name = "Test"
+name = "Trainings By Cloudbase Solutions"
 desc = trello_data["desc"]
 
 if trello_data["desc"] == "":
-    desc = "trainings-by-cloudbase-solutions"
+    desc = "Imported from Trello"
 
 data["name"] = name
 data["slug"] = name.lower().replace(" ", "-")
@@ -121,15 +121,42 @@ data["default_us_status"] = data["us_statuses"][0]["name"]
 
 for i, card in enumerate(trello_data["cards"], 1):
     name = card["name"]
+    if name.lower() == "test":
+        continue
     desc = card["desc"]
     list_id = card["idList"]
     last_activity = card["dateLastActivity"]
     closed = card["closed"]
     if card["desc"] == "":
         desc = None
+    tags = []
+    for label in card["labels"]:
+        # We need to remove the spaces from the labels
+        if label["name"].strip():
+            tags.append(label["name"].lower())
+
+# Add the attachments
+    attachments = []
+    for attachment in card["attachments"]:
+        attachments.append({
+            "owner": default_email,
+            "attached_file": {
+                "data": "",
+                "name": attachment["fileName"]
+            },
+            "created_date": attachment["date"],
+            "modified_date": attachment["date"],
+            "description": "",
+            "is_deprecated": False,
+            "name": attachment["name"],
+            "order": i,
+            "sha1": "",
+            "size": attachment["bytes"],
+        })
+
     data["user_stories"].append({
       "watchers": [],
-      "attachments": [],
+      "attachments": attachments,
       "history": [],
       "custom_attributes_values": {},
       "role_points": [],
@@ -159,7 +186,7 @@ for i, card in enumerate(trello_data["cards"], 1):
       "version": 5,
       "blocked_note": "",
       "is_blocked": False,
-      "tags": [],
+      "tags": tags,
       "due_date": None,
       "due_date_reason": ""
     })
